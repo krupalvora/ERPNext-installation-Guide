@@ -3,7 +3,7 @@
 
 ### Pre-requisites 
 
-      Python 3.6+
+      Python 3.8
       Node.js 14+
       Redis 5                                       (caching and real time updates)
       MariaDB 10.3.x / Postgres 9.5.x               (to run database driven apps)
@@ -25,7 +25,8 @@ Git also makes collaboration easier, allowing changes by multiple people to all 
 ### STEP 2 install python-dev
 python-dev is the package that contains the header files for the Python C API, 
 which is used by lxml because it includes Python C extensions for high performance.
-
+If you are having multiple version of python then use 3.8
+https://www.itsupportwale.com/blog/how-to-upgrade-to-python-3-8-on-ubuntu-18-04-lts/
     sudo apt-get install python3-dev
 
 ### STEP 3 Install setuptools and pip (Python's Package Manager).
@@ -141,6 +142,10 @@ before next step and You must login.
 ### STEP 13 initilise the frappe bench & install frappe latest version 
 
     bench init frappe-bench --frappe-branch version-13
+    
+If you get error for pillow then use:
+    python3 -m pip install --upgrade pip
+    python3 -m pip install --upgrade Pillow
     
     cd frappe-bench/
     bench start
